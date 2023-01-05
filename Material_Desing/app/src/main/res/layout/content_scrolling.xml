@@ -114,12 +114,55 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imgCover"/>
 
-                <EditText
-                    android:id="@+id/etUrl"
-                    android:layout_width="match_parent"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUrl"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:inputType="textUri"
-                    app:layout_constraintTop_toBottomOf="@+id/tvTitleAll"/>
+                    android:hint="@string/card_input_url"
+                    android:layout_marginTop="@dimen/common_padding_default"
+                    app:helperText="@string/card_required"
+                    app:endIconMode="clear_text"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitleAll"
+                    app:layout_constraintEnd_toEndOf="@+id/tvTitleAll"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleAll"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUrl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textUri"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitleAll"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/card_password"
+                    android:layout_marginTop="@dimen/common_padding_default"
+                    android:enabled="false"
+                    app:endIconMode="password_toggle"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitleAll"
+                    app:layout_constraintEnd_toEndOf="@+id/tvTitleAll"
+                    app:layout_constraintTop_toBottomOf="@+id/tilUrl"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbEnablePassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_padding_default"
+                    android:text="@string/card_enabled_password"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitleAll"
+                    app:layout_constraintTop_toBottomOf="@id/tilPassword"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>

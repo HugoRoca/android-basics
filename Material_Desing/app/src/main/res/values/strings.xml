@@ -92,4 +92,8 @@
     <string name="card_btn_buy">Buy</string>
     <string name="card_btn_skip">SKIP</string>
     <string name="card_title">Black Friday</string>
+    <string name="card_input_url">Image URL</string>
+    <string name="card_required">Required</string>
+    <string name="card_password">Password</string>
+    <string name="card_enabled_password">Enabled Password</string>
 </resources>
