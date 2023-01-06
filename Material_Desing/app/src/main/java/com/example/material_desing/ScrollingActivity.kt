@@ -8,13 +8,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.example.material_desing.databinding.ActivityScrollingBinding
+import com.google.android.material.bottomappbar.BottomAppBar
 
 class ScrollingActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityScrollingBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scrolling)
+        binding = ActivityScrollingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        binding.fabButton.setOnClickListener {
+            if (binding.bottomAppBar.fabAlignmentMode == BottomAppBar.FAB_ALIGNMENT_MODE_CENTER) {
+                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+           } else {
+                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+           }
+        }
+
+        binding.bottomAppBar.setNavigationOnClickListener {
+            Snackbar.make(binding.root, R.string.message_action_success, Snackbar.LENGTH_LONG)
+                .setAnchorView(binding.fabButton)
+                .show()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
