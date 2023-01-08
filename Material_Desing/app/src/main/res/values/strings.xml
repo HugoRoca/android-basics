@@ -104,4 +104,9 @@
     <string name="card_to_go">Cancel</string>
     <string name="card_history">History</string>
     <string name="card_invalid_url">Invalid url</string>
+    <string name="card_message_chk">Remember</string>
+    <string name="card_text_signin">SignIn</string>
+    <string name="card_text_sign">Sing</string>
+    <string name="card_username">User or email</string>
+    <string name="card_login">Login</string>
 </resources>

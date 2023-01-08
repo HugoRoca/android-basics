@@ -15,6 +15,95 @@
         android:layout_marginBottom="?attr/actionBarSize">
 
         <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:layout_marginEnd="@dimen/common_padding_min">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/common_padding_default">
+
+                <ImageView
+                    android:id="@+id/imgCoverLogin"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/card_img_cover_height"
+                    android:background="@color/design_default_color_primary"
+                    android:importantForAccessibility="no"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTitleLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_login"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgCoverLogin" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUsername"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="363dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/card_input_url"
+                    app:endIconMode="clear_text"
+                    app:helperText="@string/card_required"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitleLogin"
+                    app:layout_constraintEnd_toEndOf="@+id/tvTitleLogin"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleLogin">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textUri"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitleLogin" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPasswordLogin"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="363dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/card_password"
+                    app:endIconMode="password_toggle"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitleLogin"
+                    app:layout_constraintEnd_toEndOf="@+id/tvTitleLogin"
+                    app:layout_constraintTop_toBottomOf="@+id/tilUsername">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPasswordLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/chkEnabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_message_chk"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tilPasswordLogin"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_text_sign"
+                    app:icon="@drawable/ic_login"
+                    app:layout_constraintEnd_toEndOf="@id/imgCoverLogin"
+                    app:layout_constraintTop_toBottomOf="@id/chkEnabled"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvAds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,7 +115,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="@dimen/common_padding_default"
                 android:paddingStart="@dimen/common_padding_default"
                 android:paddingEnd="@dimen/common_padding_default">
