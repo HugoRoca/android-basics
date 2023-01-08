@@ -102,7 +102,7 @@
                     app:layout_constraintTop_toBottomOf="@id/chkEnabled"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
-
+s
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvAds"
             android:layout_width="match_parent"
